@@ -1,0 +1,135 @@
+<html>
+   <head>
+      
+      <!-- for styling -->
+      <style>
+      body{
+             
+            background-image: linear-gradient(to right,yellow,blue);
+      }
+      
+      .left{
+      
+      margin:200px 0px 0px 600px;
+      
+      }
+         .title{
+         margin-bottom: 10px;
+         text-align:center;
+         
+          background-image:linear-gradient(to right,blue,yellow);
+         border: solid black 2px;
+         margin-left:15px;
+         width:280px;
+         font-size:30px;
+         }
+  
+         input[type="button"]
+         {
+         background-color:green;
+         color: black;
+         border: solid black 2px;
+         width:100%
+         }
+         table{
+         border: 0px
+         }
+  
+         input[type="text"]
+         {
+         background-color:white;
+         border: solid black 2px;
+         width:100%
+         }
+         .p{
+          border: 0px
+         }
+         .p input{
+         padding:20px;
+         margin-right:10px;
+         font-size:15px;
+         border-radius: 25px;
+        
+         }
+         .j input{
+         background-image:linear-gradient(to right, yellow,red);
+         
+        
+         }
+         .k input{
+         background-image:linear-gradient(to right, pink,red);
+         
+        
+         }
+         
+        
+      </style>
+   </head>
+   <!-- create table -->
+   <body>
+   <div class="left" >
+      <div class = title >Calculator</div>
+      
+    
+      <table border="1">
+         <tr>
+            <td class="p " colspan="3"><input type="text" id="result"/> </td>
+            <!-- clr() function will call clr to clear all value -->
+            <td class="p k"><input type="button" value="c" onclick="clr()"/> </td>
+         </tr>
+         <tr>
+            <!-- create button and assign value to each button -->
+            <!-- dis("1") will call function dis to display value -->
+            <td class="p k "><input type="button" value="1" onclick="dis('1')"/> </td>
+            <td class="p k"><input type="button" value="2" onclick="dis('2')"/> </td>
+            <td class="p k"><input type="button" value="3" onclick="dis('3')"/> </td>
+            <td class="p j"><input type="button" value="/" onclick="dis('/')"/> </td>
+         </tr>
+         <tr>
+            <td class="p k"><input type="button" value="4" onclick="dis('4')"/> </td>
+            <td class="p k"><input type="button" value="5" onclick="dis('5')"/> </td>
+            <td class="p k"><input type="button" value="6" onclick="dis('6')"/> </td>
+            <td class="p j"><input type="button" value="-" onclick="dis('-')"/> </td>
+         </tr>
+         <tr>
+            <td class="p k"><input type="button" value="7" onclick="dis('7')"/> </td>
+            <td class="p k"><input type="button" value="8" onclick="dis('8')"/> </td>
+            <td class="p k"><input type="button" value="9" onclick="dis('9')"/> </td>
+            <td class="p j"><input type="button" value="+" onclick="dis('+')"/> </td>
+         </tr>
+         <tr>
+            <td class="p k"><input type="button" value="." onclick="dis('.')"/> </td>
+            <td class="p k"><input type="button" value="0" onclick="dis('0')"/> </td>
+            <!-- solve function call function solve to evaluate value -->
+            <td class="p k"><input type="button" value="=" onclick="solve()"/> </td>
+            <td class="p j"><input type="button" value="*" onclick="dis('*')"/> </td>
+         </tr>
+      </table>
+</div>
+      <script>
+         //function that display value
+         let x;
+         let y="5";
+         function dis(val)
+         {
+             document.getElementById("result").value+=val
+         }
+           
+         //function that evaluates the digit and return result
+         function solve()
+         {
+            x = document.getElementById("result").value
+              y = eval(x)
+             document.getElementById("result").value = y
+             document.getElementById("his").innerHTML = y
+         }
+           
+         //function that clear the display
+         function clr()
+         {
+             document.getElementById("result").value = ""
+         }
+          
+      </script>
+   </body>
+</html>   
